@@ -82,11 +82,11 @@ def place_shot(board):
         for i in available_shots:
             lines_with_i = [i in line for line in prospective_lines]
             if np.sum(lines_with_i) > 1:
-                print(f"The computer shoots for the win {shot + 1}")
                 shot = i
-            else:
                 print(f"The computer shoots for the win {shot + 1}")
+            else:
                 shot = random.choice(np.intersect1d(prospective_lines, available_shots))
+                print(f"The computer shoots for the win {shot + 1}")
             board[shot] = "O"
             return
 
